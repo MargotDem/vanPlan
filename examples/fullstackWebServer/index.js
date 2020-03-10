@@ -1,5 +1,7 @@
 const http = require('http');
-const router = require('./routes');
+const { handleApiRoutes } = require("./routing/apiRoutes");
+const { handleWebRoutes } = require("./routing/webRoutes");
+
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -10,7 +12,11 @@ const server = http.createServer((req, res) => {
     res.on('error', (err) => {
         console.error(err);
     });
-    router(req, res);
+    if (req.url.startsWith("/api/")) {
+        handleApiRoutes(req, res);
+    } else {
+        handleWebRoutes(req, res)
+    }
 });
 
 server.listen(port, hostname, () => {

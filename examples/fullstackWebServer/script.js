@@ -3,7 +3,7 @@
 
 let sendGetRequest = () => {
     console.log("axios: ", axios);
-    axios.get("api/test")
+    axios.get("/api/tags")
         .then(res => {
             console.log("response: ", res);
         })
