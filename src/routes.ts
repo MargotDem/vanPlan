@@ -6,10 +6,12 @@ const routes = [
         url: "/api/tags",
         handler: async (req: IncomingMessage, res: ServerResponse) => {
             let tags = {
-                tag1: "blablabla",
+                tag1: "blablableh",
                 tag2: "hohoho",
             }
+
             return tags
+
         },
     },
 ]
