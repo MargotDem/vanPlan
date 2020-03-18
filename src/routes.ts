@@ -1,19 +1,21 @@
-import { IncomingMessage, ServerResponse } from 'http'
+const itemsController = require('./controllers/itemsController');
 
 const routes = [
     {
-        method: "GET",
-        url: "/api/tags",
-        handler: async (req: IncomingMessage, res: ServerResponse) => {
-            let tags = {
-                tag1: "blablableh",
-                tag2: "hohoho",
-            }
-
-            return tags
-
-        },
+        method: 'GET',
+        url: '/items',
+        handler: itemsController.findAll,
     },
+    {
+        method: 'GET',
+        url: '/items/:id',
+        handler: itemsController.find,
+    },
+    {
+        method: 'POST',
+        url: '/items',
+        handler: itemsController.create,
+    }
 ]
 
 module.exports = routes;
