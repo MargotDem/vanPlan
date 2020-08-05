@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "fastify": "^2.12.1",
+    "fastify": "^2.15.1",
     "fastify-sequelize": "^1.0.4",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.5"
